@@ -1,0 +1,68 @@
+# AWS-ENV/.gitignore
+.ssh/
+*.pem
+backups/
+
+### Python ###
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.python-version
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+pip-selfcheck.json
+
+### AWS Security ###
+.aws/
+*.env
+*.secret
+*.credentials
+config.ini
+aws_config.json
+*.pem  # <-- Added PEM key exclusion
+*.key
+*.crt
+*.pgp
+*.gpg
+
+### IDEs ###
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+.DS_Store
+
+### System ###
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Terraform ###
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+terraform.tfvars
+
+### Logs & Tests ###
+*.log
+*.sqlite
+*.sqlite3
+.coverage
+htmlcov/

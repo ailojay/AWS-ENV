@@ -1,0 +1,6 @@
+\n# Lambda deployment packages\n*.zip
+
+# Terraform
+**/.terraform/*
+*.tfstate*
+

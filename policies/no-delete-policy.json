@@ -1,0 +1,20 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyDeleteObjectUnlessAdminOrRoot",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:DeleteObject",
+      "Resource": "arn:aws:s3:::cloudtrail-logs-961535847135/AWSLogs/961535847135/*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::961535847135:root",
+            "arn:aws:iam::961535847135:role/AdministratorAccess"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+.localized
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python/
+env/
+venv/
+.venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+Pipfile.lock # if not using pipenv for lockfile sharing
+
+# VS Code
+.vscode/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+*.tfvars # To ignore specific tfvars files, common for secrets/environment specific values
+*.tfvars.json
+.terraformrc
+crash.log
+crash.*.log
+override.tf
+override.tf.json

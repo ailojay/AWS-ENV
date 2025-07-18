@@ -1,0 +1,5 @@
+{
+    "python.defaultInterpreterPath": "/mnt/c/Users/paule/AWS-ENV/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": ["/mnt/c/Users/paule/AWS-ENV"]
+}

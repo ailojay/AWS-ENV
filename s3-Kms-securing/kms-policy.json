@@ -1,0 +1,30 @@
+{
+  "Version": "2012-10-17",
+  "Id": "key-default-1",
+  "Statement": [
+    {
+      "Sid": "Enable Admin Management",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::961535847135:user/Admin"
+      },
+      "Action": [
+        "kms:Encrypt",
+        "kms:Decrypt",
+        "kms:PutKeyPolicy",
+        "kms:UpdateKeyDescription",
+        "kms:EnableKeyRotation",
+        "kms:DisableKeyRotation",
+        "kms:GenerateDataKey",
+        "kms:GetKeyPolicy",
+        "kms:DisableKey",
+        "kms:ScheduleKeyDeletion",
+        "kms:DescribeKey",
+        "kms:CancelKeyDeletion",
+        "kms:EnableKey"
+
+      ],
+      "Resource": "arn:aws:kms:us-east-1:961535847135:key/29a826ac-68d4-4daf-af9b-75b491b18e69"
+    }
+  ]
+}

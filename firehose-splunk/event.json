@@ -1,0 +1,10 @@
+{
+  "detail": {
+    "bucket": {
+      "name": "my-cloudtrail-logs-bucket"
+    },
+    "object": {
+      "key": "AWSLogs/123456789012/CloudTrail/us-east-1/2025/08/08/mylogfile.json.gz"
+    }
+  }
+}

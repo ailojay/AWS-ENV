@@ -1,0 +1,62 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "EX_PRINCIPAL_ID",
+        "arn": "arn:aws:iam::961535847135:user/test-user",
+        "accountId": "961535847135",
+        "accessKeyId": "EXAMPLE_KEY_ID",
+        "userName": "test-user"
+      },
+      "eventTime": "2025-08-06T17:45:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "StartInstances",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "userAgent": "aws-cli/2.13.9",
+      "requestParameters": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-0abcd1234efgh5678"
+            }
+          ]
+        }
+      },
+      "responseElements": {
+        "instancesSet": {
+          "items": [
+            {
+              "instanceId": "i-0abcd1234efgh5678",
+              "currentState": {
+                "code": 0,
+                "name": "pending"
+              },
+              "previousState": {
+                "code": 80,
+                "name": "stopped"
+              }
+            }
+          ]
+        }
+      },
+      "requestID": "12345678-1234-1234-1234-123456789012",
+      "eventID": "abcdefg-hijk-lmno-pqrs-tuvwxyz123456",
+      "readOnly": false,
+      "resources": [
+        {
+          "ARN": "arn:aws:ec2:us-east-1:961535847135:instance/i-0abcd1234efgh5678",
+          "accountId": "961535847135",
+          "type": "AWS::EC2::Instance"
+        }
+      ],
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "recipientAccountId": "961535847135",
+      "sharedEventID": "shared-event-id",
+      "eventCategory": "Management"
+    }
+  ]
+}

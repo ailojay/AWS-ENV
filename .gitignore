@@ -22,6 +22,7 @@ Pipfile.lock # if not using pipenv for lockfile sharing
 .vscode/
 
 # Terraform
+.zip
 .terraform/
 *.tfstate
 *.tfstate.*

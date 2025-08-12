@@ -1,0 +1,11 @@
+{
+  "detail": {
+    "id": "abcde12345",
+    "accountId": "726929447744",
+    "resource": {
+      "instanceDetails": {
+        "instanceId": "i-03cf22d4d31796794"
+      }
+    }
+  }
+}

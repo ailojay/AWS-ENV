@@ -1,0 +1,15 @@
+{
+    "logStreams": [
+        {
+            "logStreamName": "2025/07/21/[$LATEST]c4a1616e725348499ea2ccfaf45e7026",
+            "creationTime": 1753103868005,
+            "firstEventTimestamp": 1753103859392,
+            "lastEventTimestamp": 1753103864346,
+            "lastIngestionTime": 1753103868011,
+            "uploadSequenceToken": "49039859637983184346512344420099301803363593885688174752",
+            "arn": "arn:aws:logs:us-east-1:961535847135:log-group:/aws/lambda/guardduty-crypto-remediation-x5zsT4uX:log-stream:2025/07/21/[$LATEST]c4a1616e725348499ea2ccfaf45e7026",
+            "storedBytes": 0
+        }
+    ],
+    "nextToken": "Kwfr0bfVKkYk4OrYazFRidfdMPSUtQknysJHKXFGxGlI67xmceEj6ZPXMngz9pt_sohr0hmVPK5ekwXKIh_Zu9Ogl_6ZEAYUhWq2_WQkwnirvu3Vl0ViMNzd4EhRVbHuhZtTKeBTSHNXbMlCrmnhdnf25qWoZY3l8xDCPTlynv2DzQr2bTO5jgLBUdk5jBjulFmEFMijbWQYcY7DKiAXFDOFOILZDwiqrMpcuWd4tUfM8SQayb-oO-jG9_4vJSfMYDQek9ZgING820pt7jQ64vzGHFBRpcFCs128Hbe9AYdwrbQk0Jogv0fB8JxOFEctSxCd4gIGB1rRV3KkXnr-lFh2YPqI2-xGnXUiMFuV_qF-pmEZ1RkfvJIYClTejbMSuX3Rd1t7pNmWt2iRBFpqn5VxkFjtC9OWMddo3lCgzY0"
+}

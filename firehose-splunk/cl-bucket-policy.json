@@ -1,0 +1,46 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowLambdaReadLogs",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::961535847135:role/LambdaExecutionRole"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::secure-trail-logs/*"
+    },
+    {
+      "Sid": "AWSCloudTrailRead",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::secure-trail-logs/AWSLogs/961535847135/*"
+    },
+    {
+      "Sid": "AWSCloudTrailAclCheck",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+      },
+      "Action": "s3:GetBucketAcl",
+      "Resource": "arn:aws:s3:::secure-trail-logs"
+    },
+    {
+      "Sid": "AWSCloudTrailWrite",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "cloudtrail.amazonaws.com"
+      },
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::secure-trail-logs/AWSLogs/961535847135/*",
+      "Condition": {
+        "StringEquals": {
+          "s3:x-amz-acl": "bucket-owner-full-control"
+        }
+      }
+    }
+  ]
+}

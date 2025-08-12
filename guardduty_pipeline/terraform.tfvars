@@ -1,0 +1,5 @@
+region              = "us-east-1"
+ses_email_source    = "adeaws@aol.com"
+ses_email_recipient = "pauledukpe@yahoo.com"
+s3_bucket_prefix    = "crypto-sec-findings"
+management_account_id = "726929447744"

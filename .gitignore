@@ -73,3 +73,14 @@ secrets*.tfvars
 policies/Amazon*.json
 policies/AWS*.json
 
+
+# Security
+*.pem
+*.key
+*.tfvars
+*.zip
+
+# AWS policies
+policies/Amazon*
+policies/AWS*
+

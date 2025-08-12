@@ -1,52 +1,58 @@
-# Operating System Files
+### --- Operating System ---
 .DS_Store
 Thumbs.db
 .localized
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python/
-env/
-venv/
+### --- Python ---
+# Virtual environments
 .venv/
-*.egg-info/
+venv/
+env/
+
+# Bytecode and cache
+__pycache__/
+*.py[cod]
 .pytest_cache/
 .mypy_cache/
 .ipynb_checkpoints/
-Pipfile.lock # if not using pipenv for lockfile sharing
 
-# VS Code
-.vscode/
+# Packaging
+*.egg-info/
+*.egg
 
-# Terraform
-.zip
+### --- AWS ---
+# CLI and SDK artifacts
+aws/dist/
+.aws/
+
+# Secrets/credentials
+auth.json
+*.pem
+*.key
+*.secret
+
+### --- Terraform ---
+# State and lock files
 .terraform/
 *.tfstate
 *.tfstate.*
 .terraform.lock.hcl
-*.tfvars # To ignore specific tfvars files, common for secrets/environment specific values
+
+# Variable files (often contain secrets)
+*.tfvars
 *.tfvars.json
-.terraformrc
-crash.log
-crash.*.log
+
+# Overrides and logs
 override.tf
 override.tf.json
+crash.log
+crash.*.log
+.terraformrc
 
-# AWS CLI and binaries
-aws/dist/
-.aws/
-
-# Credentials/secrets
-auth.json
-*.pem
-*.key
-
-# Lambda/build artifacts
+### --- Build Artifacts ---
 *.zip
-__pycache__/
+*.so  # Binary extensions
 
-# Large auto-generated files
-all_policies.json
+### --- IDE ---
+.vscode/
+.idea/

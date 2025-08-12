@@ -34,3 +34,19 @@ crash.log
 crash.*.log
 override.tf
 override.tf.json
+
+# AWS CLI and binaries
+aws/dist/
+.aws/
+
+# Credentials/secrets
+auth.json
+*.pem
+*.key
+
+# Lambda/build artifacts
+*.zip
+__pycache__/
+
+# Large auto-generated files
+all_policies.json

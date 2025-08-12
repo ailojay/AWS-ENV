@@ -56,3 +56,20 @@ crash.*.log
 ### --- IDE ---
 .vscode/
 .idea/
+
+# Add these to your existing .gitignore
+policies/Amazon*.json
+policies/AWS*.json
+*.tfstate
+*.tfstate.*
+*.zip
+test*.txt
+*.tfvars
+secrets*.tfvars
+# Critical additions
+*.pem
+*.zip
+*.tfvars
+policies/Amazon*.json
+policies/AWS*.json
+

@@ -1,0 +1,82 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Parameterized CloudFormation template to create a secure S3 bucket with optional versioning,
+  access logging, and a bucket policy allowing a specified CloudTrail trail to write logs.
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: "The name of the S3 bucket to create"
+    AllowedPattern: "^[a-z0-9-\\.]{3,63}$"
+    ConstraintDescription: "must be a valid bucket name (lowercase letters, numbers, hyphens, and dots, 3-63 chars)"
+
+  LogBucketName:
+    Type: String
+    Description: "Name of the existing S3 bucket to receive access logs"
+    AllowedPattern: "^[a-z0-9-\\.]{3,63}$"
+    ConstraintDescription: "must be a valid existing bucket name"
+
+  EnableVersioning:
+    Type: String
+    Description: "Enable versioning on the bucket (true/false)"
+    AllowedValues:
+      - "true"
+      - "false"
+    Default: "false"
+
+  CloudTrailTrailArn:
+    Type: String
+    Description: "The ARN of the CloudTrail trail allowed to write to the bucket"
+
+Conditions:
+  IsVersioningEnabled: !Equals [ !Ref EnableVersioning, "true" ]
+
+Resources:
+  SecureS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+      VersioningConfiguration:
+        Status: !If
+          - IsVersioningEnabled
+          - Enabled
+          - Suspended
+
+      LoggingConfiguration:
+        DestinationBucketName: !Ref LogBucketName
+        LogFilePrefix: access-logs/
+
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+  SecureS3BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref SecureS3Bucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowCloudTrailWrite
+            Effect: Allow
+            Principal:
+              Service: cloudtrail.amazonaws.com
+            Action:
+              - "s3:PutObject"
+              - "s3:GetBucketAcl"
+            Resource:
+              - !Sub "arn:aws:s3:::${BucketName}"
+              - !Sub "arn:aws:s3:::${BucketName}/AWSLogs/${AWS::AccountId}/*"
+            Condition:
+              StringEquals:
+                "aws:SourceAccount": !Ref "AWS::AccountId"
+              ArnLike:
+                "aws:SourceArn": !Ref CloudTrailTrailArn

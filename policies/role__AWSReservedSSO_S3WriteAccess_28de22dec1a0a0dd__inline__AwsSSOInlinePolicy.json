@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "SSO",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "cloudtrail:ListTrails",
+        "cloudtrail:GetTrail",
+        "cloudtrail:CreateTrail",
+        "cloudtrail:StartLogging",
+        "cloudtrail:UpdateTrail",
+        "s3:CreateBucket",
+        "s3:DeleteBucket",
+        "s3:PutBucketPolicy",
+        "cloudtrail:GetTrailStatus",
+        "s3:ListBucket",
+        "s3:PutBucketVersioning"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

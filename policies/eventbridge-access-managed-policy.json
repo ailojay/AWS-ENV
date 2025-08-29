@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:ListRules",
+        "events:ListTargetsByRule",
+        "events:ListTagsForResource",
+        "events:DescribeRule"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

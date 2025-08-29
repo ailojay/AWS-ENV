@@ -1,5 +1,45 @@
 {
-    "python.defaultInterpreterPath": "/mnt/c/Users/paule/AWS-ENV/.venv/bin/python",
-    "python.terminal.activateEnvironment": true,
-    "python.analysis.extraPaths": ["/mnt/c/Users/paule/AWS-ENV"]
+  "python.defaultInterpreterPath": "/mnt/c/Users/paule/AWS-ENV/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.extraPaths": [
+    "/mnt/c/Users/paule/AWS-ENV"
+  ],
+
+  "yaml.customTags": [
+    "!Base64 scalar",
+    "!Cidr scalar",
+    "!And sequence",
+    "!Equals sequence",
+    "!If sequence",
+    "!Not sequence",
+    "!Or sequence",
+    "!Condition scalar",
+    "!FindInMap sequence",
+    "!GetAtt scalar",
+    "!GetAtt sequence",
+    "!GetAZs scalar",
+    "!ImportValue scalar",
+    "!Join sequence",
+    "!Select sequence",
+    "!Split sequence",
+    "!Sub scalar",
+    "!Transform mapping",
+    "!Ref scalar"
+  ],
+
+  "yaml.validate": false,
+
+  "files.associations": {
+    "*.yaml": "yaml",
+    "*.yml": "yaml",
+    "*.cf.yaml": "yaml",
+    "*.cf.yml": "yaml"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+
+  // Add this line:
+  "cfnLint.path": "/home/ailojay/AWS-ENV/.venv/bin/cfn-lint"
 }

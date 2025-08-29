@@ -1,0 +1,15 @@
+{
+  "Version": "2008-10-17",
+  "Id": "AccessAnalyzerEventBridgePolicy",
+  "Statement": [
+    {
+      "Sid": "AllowEventBridgePublish",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "events.amazonaws.com"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "arn:aws:sns:us-east-1:726929447744:AccessAnalyzerFindingsTopic"
+    }
+  ]
+}

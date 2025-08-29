@@ -1,0 +1,40 @@
+2025-08-19T19:36:46.118+0100 [INFO]  Terraform version: 1.6.6
+2025-08-19T19:36:46.118+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.36.0
+2025-08-19T19:36:46.118+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.19.1
+2025-08-19T19:36:46.118+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2025-08-19T19:36:46.118+0100 [DEBUG] using github.com/zclconf/go-cty v1.14.1
+2025-08-19T19:36:46.118+0100 [INFO]  Go runtime version: go1.21.5
+2025-08-19T19:36:46.118+0100 [INFO]  CLI args: []string{"/home/ailojay/.tfenv/versions/1.6.6/terraform", "init"}
+2025-08-19T19:36:46.118+0100 [DEBUG] Attempting to open CLI config file: /home/ailojay/.terraformrc
+2025-08-19T19:36:46.118+0100 [INFO]  Loading CLI configuration from /home/ailojay/.terraformrc
+2025-08-19T19:36:46.119+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2025-08-19T19:36:46.119+0100 [DEBUG] ignoring non-existing provider search directory /home/ailojay/.terraform.d/plugins
+2025-08-19T19:36:46.119+0100 [DEBUG] ignoring non-existing provider search directory /home/ailojay/.local/share/terraform/plugins
+2025-08-19T19:36:46.119+0100 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2025-08-19T19:36:46.119+0100 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2025-08-19T19:36:46.120+0100 [DEBUG] ignoring non-existing provider search directory /var/lib/snapd/desktop/terraform/plugins
+2025-08-19T19:36:46.121+0100 [INFO]  CLI command args: []string{"init"}
+2025-08-19T19:36:46.122+0100 [INFO]  Checkpoint disabled. Not running.
+2025-08-19T19:36:46.126+0100 [DEBUG] New state was assigned lineage "c857c2bf-2d8c-e731-60d9-3ce71c6d6702"
+2025-08-19T19:36:46.127+0100 [DEBUG] checking for provisioner in "."
+2025-08-19T19:36:46.127+0100 [DEBUG] checking for provisioner in "/home/ailojay/.tfenv/versions/1.6.6"
+2025-08-19T19:36:46.129+0100 [DEBUG] Module installer: begin website_assets
+2025-08-19T19:36:46.130+0100 [DEBUG] Module installer: website_assets installed at ../modules/s3
+2025-08-19T19:36:46.131+0100 [DEBUG] Service discovery for registry.terraform.io at https://registry.terraform.io/.well-known/terraform.json
+2025-08-19T19:36:46.787+0100 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/aws/versions
+2025-08-19T19:36:47.009+0100 [DEBUG] GET https://registry.terraform.io/v1/providers/hashicorp/aws/6.8.0/download/linux/amd64
+2025-08-19T19:36:47.200+0100 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-aws/6.8.0/terraform-provider-aws_6.8.0_SHA256SUMS
+2025-08-19T19:36:47.584+0100 [DEBUG] GET https://releases.hashicorp.com/terraform-provider-aws/6.8.0/terraform-provider-aws_6.8.0_SHA256SUMS.72D7468F.sig
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mFailed to install provider[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mError while installing hashicorp/aws v6.8.0: context canceled
+[31m╵[0m[0m
+[0m[0m
+[31mProvider installation was canceled by an interrupt signal.[0m[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mFailed to install provider[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mError while installing hashicorp/aws v6.8.0: context canceled
+[31m╵[0m[0m
+[0m[0m

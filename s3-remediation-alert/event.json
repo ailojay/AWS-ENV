@@ -1,0 +1,17 @@
+﻿{
+  "detail": {
+    "findings": [
+      {
+        "Id": "arn:aws:securityhub:us-east-1:726929447744:security-control/S3.2/finding/ff4f2258-4b6b-49a9-b074-6fdade8f1b2d",
+        "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub",
+        "Title": "S3 Bucket allows public read access",
+        "Resources": [
+          {
+            "Type": "AwsS3Bucket",
+            "Id": "arn:aws:s3:::my-public-bucket-726929447744"
+          }
+        ]
+      }
+    ]
+  }
+}

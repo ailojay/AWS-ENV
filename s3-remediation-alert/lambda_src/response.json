@@ -1,0 +1,1 @@
+{"errorMessage": "name 'datetime' is not defined", "errorType": "NameError", "requestId": "4cdf9b8a-3a06-43f0-b652-46fd5e61717a", "stackTrace": ["  File \"/var/task/lambda_function.py\", line 35, in lambda_handler\n    {'Key': 'Timestamp', 'Value': datetime.utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}\n"]}

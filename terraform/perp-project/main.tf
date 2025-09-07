@@ -13,13 +13,15 @@ data "aws_ssm_parameter" "al2_ami" {
 }
 
 module "ec2_instance" {
-  source            = "../modules/ec2"
-  ami_id            = data.aws_ssm_parameter.al2_ami.value
-  instance_type     = var.instance_type
-  subnet_id         = module.main_vpc.public_subnet_ids[0]
-  security_group_ids = [module.main_vpc.security_group_id]
-  ssh_key_name      = var.ssh_key_name
-  instance_name     = "${var.instance_name}-${var.environment}"
+  source               = "../modules/ec2"
+  ami_id               = data.aws_ssm_parameter.al2_ami.value
+  vpc_id               = module.main_vpc.vpc_id
+  name                 = var.instance_name
+  instance_type        = var.instance_type
+  subnet_id            = module.main_vpc.public_subnet_ids[0]
+  security_group_ids   = [module.main_vpc.security_group_id]
+  ssh_key_name         = var.ssh_key_name
+  instance_name        = "${var.instance_name}-${var.environment}"
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
 
 

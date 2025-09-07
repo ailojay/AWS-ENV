@@ -4,12 +4,12 @@ variable "instance_type" {
 }
 
 variable "instance_name" {
-  type    = string
+  type = string
 }
 
 variable "project_name" {
   description = "The name of the project"
-  type    = string
+  type        = string
 }
 
 variable "state_bucket" {
@@ -21,7 +21,7 @@ variable "tags" {
   description = "A map of tags to assign to resources"
   type        = map(string)
   default     = {}
-  
+
 }
 
 variable "ssh_key_name" {

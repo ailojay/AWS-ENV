@@ -1,6 +1,12 @@
 name: Terraform CI - Perp Project
 
 on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy (dev/prod)'
+        required: true
+        default: dev
   push:
     paths:
       - 'terraform/perp-project/**'
@@ -29,14 +35,29 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
-        run: terraform plan -var-file="dev.tfvars"
+        env:
+          TF_VAR_project_name: ${{ secrets[github.event.inputs.environment | upper + '_PROJECT_NAME'] }}
+          TF_VAR_vpcproject_name: ${{ secrets[github.event.inputs.environment | upper + '_VPC_PROJECT_NAME'] }}
+          TF_VAR_state_bucket: ${{ secrets[github.event.inputs.environment | upper + '_STATE_BUCKET'] }}
+          TF_VAR_ssh_key_name: ${{ secrets[github.event.inputs.environment | upper + '_SSH_KEY_NAME'] }}
+          TF_VAR_instance_name: ${{ secrets[github.event.inputs.environment | upper + '_INSTANCE_NAME'] }}
+          TF_VAR_environment: ${{ secrets[github.event.inputs.environment | upper + '_ENVIRONMENT'] }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: terraform plan
 
-      # Uncomment this when you’re ready to auto-apply on push
+      # Uncomment this when ready to auto-apply on push
       # - name: Terraform Apply
       #   if: github.event_name == 'push'
-      #   run: terraform apply -auto-approve -var-file="dev.tfvars"
-
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      AWS_REGION: ${{ secrets.AWS_REGION }}
+      #   env:
+      #     TF_VAR_project_name: ${{ secrets[github.event.inputs.environment | upper + '_PROJECT_NAME'] }}
+      #     TF_VAR_vpcproject_name: ${{ secrets[github.event.inputs.environment | upper + '_VPC_PROJECT_NAME'] }}
+      #     TF_VAR_state_bucket: ${{ secrets[github.event.inputs.environment | upper + '_STATE_BUCKET'] }}
+      #     TF_VAR_ssh_key_name: ${{ secrets[github.event.inputs.environment | upper + '_SSH_KEY_NAME'] }}
+      #     TF_VAR_instance_name: ${{ secrets[github.event.inputs.environment | upper + '_INSTANCE_NAME'] }}
+      #     TF_VAR_environment: ${{ secrets[github.event.inputs.environment | upper + '_ENVIRONMENT'] }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #   run: terraform apply -auto-approve

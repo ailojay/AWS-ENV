@@ -9,4 +9,3 @@ output "vpc_id" {
 output "security_group_id" {
   value = module.main_vpc.security_group_id
 }
-

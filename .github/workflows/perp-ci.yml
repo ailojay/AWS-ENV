@@ -34,7 +34,7 @@ jobs:
 
       # Auto-apply only on push to main branch
       - name: Terraform Destroy
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
         run: terraform destroy -auto-approve
 
     env:

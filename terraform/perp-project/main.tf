@@ -1,11 +1,12 @@
 module "main_vpc" {
   source          = "../modules/vpc"
-  vpc_name        = "${var.vpcproject_name}-${var.environment}"
+  vpc_name        = "${var.project_name}-${var.environment}"
   vpc_cidr        = "10.0.0.0/16"
   public_subnets  = ["10.0.1.0/24", "10.0.2.0/24"]
   private_subnets = ["10.0.101.0/24", "10.0.102.0/24"]
   azs             = ["us-east-1a", "us-east-1b"]
-  tags            = merge(var.tags, { Environment = var.environment })
+
+  tags = merge(var.tags, { Environment = var.environment })
 }
 
 data "aws_ssm_parameter" "al2_ami" {
@@ -24,19 +25,8 @@ module "ec2_instance" {
   instance_name        = "${var.instance_name}-${var.environment}"
   iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.name
 
-
   tags = merge(var.tags, {
     Project     = var.project_name
-    Environment = var.environment
-  })
-}
-
-resource "aws_s3_bucket" "tfstate" {
-  bucket        = "${var.environment}-${var.state_bucket}"
-  force_destroy = true
-
-  tags = merge(var.tags, {
-    Name        = "${var.environment}-perp-project-tfstate"
     Environment = var.environment
   })
 }
